@@ -149,6 +149,25 @@
             </objects>
             <point key="canvasLocation" x="-270" y="809"/>
         </scene>
+        <!--Controller Qrcode-->
+        <scene sceneID="9Mc-TP-p6W">
+            <objects>
+                <viewController id="uMr-1n-geG" customClass="controllerQrcode" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1C6-h9-ePN"/>
+                        <viewControllerLayoutGuide type="bottom" id="asJ-wo-hRW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VQu-kr-C7V">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w8Q-pO-HtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="181" y="809"/>
+        </scene>
     </scenes>
     <resources>
         <image name="iphone" width="580" height="75"/>
