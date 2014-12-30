@@ -14,6 +14,9 @@
 		0EE220BD1A5191270087C477 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EE220BC1A5191270087C477 /* Images.xcassets */; };
 		0EE220C01A5191270087C477 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE220BE1A5191270087C477 /* LaunchScreen.xib */; };
 		0EE220CC1A5191270087C477 /* EQTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE220CB1A5191270087C477 /* EQTests.m */; };
+		0EE220DD1A51BF200087C477 /* CellLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE220DB1A51BF200087C477 /* CellLogin.m */; };
+		0EE220DE1A51BF200087C477 /* CellLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE220DC1A51BF200087C477 /* CellLogin.xib */; };
+		0EE220EA1A5266B40087C477 /* controllerLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE220E91A5266B40087C477 /* controllerLogin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,11 @@
 		0EE220C51A5191270087C477 /* EQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE220CA1A5191270087C477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EE220CB1A5191270087C477 /* EQTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EQTests.m; sourceTree = "<group>"; };
+		0EE220DA1A51BF200087C477 /* CellLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellLogin.h; sourceTree = "<group>"; };
+		0EE220DB1A51BF200087C477 /* CellLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellLogin.m; sourceTree = "<group>"; };
+		0EE220DC1A51BF200087C477 /* CellLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellLogin.xib; sourceTree = "<group>"; };
+		0EE220E81A5266B40087C477 /* controllerLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerLogin.h; sourceTree = "<group>"; };
+		0EE220E91A5266B40087C477 /* controllerLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = controllerLogin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,11 @@
 				0EE220BC1A5191270087C477 /* Images.xcassets */,
 				0EE220BE1A5191270087C477 /* LaunchScreen.xib */,
 				0EE220AF1A5191270087C477 /* Supporting Files */,
+				0EE220DA1A51BF200087C477 /* CellLogin.h */,
+				0EE220DB1A51BF200087C477 /* CellLogin.m */,
+				0EE220DC1A51BF200087C477 /* CellLogin.xib */,
+				0EE220E81A5266B40087C477 /* controllerLogin.h */,
+				0EE220E91A5266B40087C477 /* controllerLogin.m */,
 			);
 			path = EQ;
 			sourceTree = "<group>";
@@ -202,6 +215,7 @@
 				0EE220BB1A5191270087C477 /* Main.storyboard in Resources */,
 				0EE220C01A5191270087C477 /* LaunchScreen.xib in Resources */,
 				0EE220BD1A5191270087C477 /* Images.xcassets in Resources */,
+				0EE220DE1A51BF200087C477 /* CellLogin.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +236,8 @@
 				0EE220B81A5191270087C477 /* ViewController.m in Sources */,
 				0EE220B51A5191270087C477 /* AppDelegate.m in Sources */,
 				0EE220B21A5191270087C477 /* main.m in Sources */,
+				0EE220DD1A51BF200087C477 /* CellLogin.m in Sources */,
+				0EE220EA1A5266B40087C477 /* controllerLogin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
