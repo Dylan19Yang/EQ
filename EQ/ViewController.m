@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CellLogin.h"
 
 @interface ViewController ()
 
@@ -22,6 +23,25 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 2;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *TableSampleIdentifier = @"celllogin";
+    UINib* nib = [UINib nibWithNibName:@"CellLogin" bundle:Nil];
+    [tableView registerNib:nib forCellReuseIdentifier:TableSampleIdentifier];
+    CellLogin *cell = [tableView dequeueReusableCellWithIdentifier:
+                          TableSampleIdentifier];
+        cell = [[CellLogin alloc]
+                initWithStyle:UITableViewCellStyleValue1
+                reuseIdentifier:TableSampleIdentifier];    
+    
+    return cell;
 }
 
 @end
