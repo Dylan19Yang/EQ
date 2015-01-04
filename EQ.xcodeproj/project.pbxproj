@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ED980A11A5829FA00C826D8 /* controllerMainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED980A01A5829FA00C826D8 /* controllerMainTabBar.m */; };
+		0ED980A41A5985AE00C826D8 /* controllerSecondTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED980A31A5985AE00C826D8 /* controllerSecondTabBar.m */; };
+		0ED980A71A5991A700C826D8 /* controllerMallInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED980A61A5991A700C826D8 /* controllerMallInfo.m */; };
 		0EE220B21A5191270087C477 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE220B11A5191270087C477 /* main.m */; };
 		0EE220B51A5191270087C477 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE220B41A5191270087C477 /* AppDelegate.m */; };
 		0EE220BB1A5191270087C477 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE220B91A5191270087C477 /* Main.storyboard */; };
@@ -31,6 +34,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ED9809F1A5829FA00C826D8 /* controllerMainTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerMainTabBar.h; sourceTree = "<group>"; };
+		0ED980A01A5829FA00C826D8 /* controllerMainTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = controllerMainTabBar.m; sourceTree = "<group>"; };
+		0ED980A21A5985AE00C826D8 /* controllerSecondTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerSecondTabBar.h; sourceTree = "<group>"; };
+		0ED980A31A5985AE00C826D8 /* controllerSecondTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = controllerSecondTabBar.m; sourceTree = "<group>"; };
+		0ED980A51A5991A700C826D8 /* controllerMallInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerMallInfo.h; sourceTree = "<group>"; };
+		0ED980A61A5991A700C826D8 /* controllerMallInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = controllerMallInfo.m; sourceTree = "<group>"; };
 		0EE220AC1A5191270087C477 /* EQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE220B01A5191270087C477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EE220B11A5191270087C477 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -106,6 +115,12 @@
 				0EE220E91A5266B40087C477 /* controllerLogin.m */,
 				0EE220ED1A52DEA60087C477 /* controllerQrcode.h */,
 				0EE220EE1A52DEA60087C477 /* controllerQrcode.m */,
+				0ED9809F1A5829FA00C826D8 /* controllerMainTabBar.h */,
+				0ED980A01A5829FA00C826D8 /* controllerMainTabBar.m */,
+				0ED980A21A5985AE00C826D8 /* controllerSecondTabBar.h */,
+				0ED980A31A5985AE00C826D8 /* controllerSecondTabBar.m */,
+				0ED980A51A5991A700C826D8 /* controllerMallInfo.h */,
+				0ED980A61A5991A700C826D8 /* controllerMallInfo.m */,
 			);
 			path = EQ;
 			sourceTree = "<group>";
@@ -185,6 +200,7 @@
 				TargetAttributes = {
 					0EE220AB1A5191270087C477 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = PJZHZ926N9;
 					};
 					0EE220C41A5191270087C477 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -237,9 +253,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ED980A41A5985AE00C826D8 /* controllerSecondTabBar.m in Sources */,
+				0ED980A11A5829FA00C826D8 /* controllerMainTabBar.m in Sources */,
 				0EE220B51A5191270087C477 /* AppDelegate.m in Sources */,
 				0EE220B21A5191270087C477 /* main.m in Sources */,
 				0EE220DD1A51BF200087C477 /* CellLogin.m in Sources */,
+				0ED980A71A5991A700C826D8 /* controllerMallInfo.m in Sources */,
 				0EE220EA1A5266B40087C477 /* controllerLogin.m in Sources */,
 				0EE220EF1A52DEA60087C477 /* controllerQrcode.m in Sources */,
 			);
@@ -363,9 +382,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EQ/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -373,9 +395,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EQ/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -432,6 +457,7 @@
 				0EE220D11A5191270087C477 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0EE220D21A5191270087C477 /* Build configuration list for PBXNativeTarget "EQTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +466,7 @@
 				0EE220D41A5191270087C477 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
