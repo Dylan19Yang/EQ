@@ -7,6 +7,7 @@
 //
 
 #import "controllerQrcode.h"
+#import "controllerSecondTabBar.h"
 
 
 @interface controllerQrcode ()
@@ -69,6 +70,13 @@
     if (metadataObjects.count>0) {
         AVMetadataMachineReadableCodeObject* obj=metadataObjects[0];
         NSLog(@"%@",obj.stringValue);
+        if(true)
+        {
+            controllerSecondTabBar* Vc;
+            Vc = [self.storyboard instantiateViewControllerWithIdentifier:@"secondtabbar"];
+            [Vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+            [self presentViewController:Vc animated:YES completion:nil] ;
+        }
     }
 }
 
