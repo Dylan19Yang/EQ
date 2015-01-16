@@ -8,6 +8,7 @@
 
 #import "controllerLogin.h"
 #import "controllerMainTabBar.h"
+#import "controllerRegister.h"
 @interface controllerLogin ()
 
 @end
@@ -29,6 +30,7 @@
     [self.textPhone setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [self.textPwd setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -70,19 +72,33 @@
     self.viewPwdTrue.hidden=false;
     self.buttonLoginTrue.hidden=false;
     self.buttonRegTrue.hidden=false;
+    [API sharedInstance].delegate=self;
+
     
 }
 
 
 - (IBAction)buttonLoginDown:(id)sender {
-    if (true) {
-        controllerMainTabBar* Vc;
-        Vc = [self.storyboard instantiateViewControllerWithIdentifier:@"maintabbar"];
-        [Vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-        [self presentViewController:Vc animated:YES completion:nil] ;
-    }
+    
+    [[API sharedInstance] login:self.textPhone.text :self.textPwd.text];
 }
 
 - (IBAction)buttonRegDown:(id)sender {
+    controllerMainTabBar* Vc;
+    Vc = [self.storyboard instantiateViewControllerWithIdentifier:@"register"];
+    [Vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self presentViewController:Vc animated:YES completion:nil] ;
 }
+
+
+-(void)loginSuccess
+{
+    controllerRegister* Vc;
+    Vc = [self.storyboard instantiateViewControllerWithIdentifier:@"maintabbar"];
+    [Vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self presentViewController:Vc animated:YES completion:nil] ;
+
+}
+
+
 @end

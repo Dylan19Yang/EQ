@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "API.h"
 
-@interface controllerLogin : UITableViewController
+@interface controllerLogin : UITableViewController<apiDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imgLogo;
 @property (weak, nonatomic) IBOutlet UIView *viewPhone;
 @property (weak, nonatomic) IBOutlet UIView *viewPwd;

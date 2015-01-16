@@ -7,8 +7,14 @@
 //
 
 #import "controllerQueue.h"
+#import "cellQueue.h"
+#import "UIImageView+AFNetworking.h"
+
 
 @interface controllerQueue ()
+{
+    NSMutableArray* mallInfo;
+}
 
 @end
 
@@ -17,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    mallInfo=[[NSMutableArray alloc] init];
+    mallInfo=[API sharedInstance].mallInfo;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,7 +42,33 @@
 }
 */
 
-- (IBAction)test:(id)sender {
-    [[API sharedInstance] getResInfo:@"1"];
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return mallInfo.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *TableSampleIdentifier = @"cellqueue";
+    UINib* nib = [UINib nibWithNibName:@"cellQueue" bundle:Nil];
+    [tableView registerNib:nib forCellReuseIdentifier:TableSampleIdentifier];
+    cellQueue *cell = [tableView dequeueReusableCellWithIdentifier:
+                          TableSampleIdentifier];
+    if (cell == nil) {
+        cell = [[cellQueue alloc]
+                initWithStyle:UITableViewCellStyleValue1
+                reuseIdentifier:TableSampleIdentifier];
+    }
+    NSMutableArray* temp=mallInfo[indexPath.row];
+    cell.labelName.text=temp[3];
+    cell.labelInfo.text=temp[5];
+    NSString* tempURL=[NSString stringWithFormat:@"http://%@:9993/%@",[API sharedInstance].IP,temp[4]];
+    [cell.picRes setImageWithURL:[NSURL URLWithString:tempURL]];
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 @end

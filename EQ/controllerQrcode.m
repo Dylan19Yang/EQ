@@ -11,6 +11,9 @@
 
 
 @interface controllerQrcode ()
+{
+    UIAlertView* alert;
+}
 
 @end
 
@@ -27,6 +30,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [API sharedInstance].delegate=self;
+}
 
 -(void)readQrcode
 {
@@ -64,30 +72,41 @@
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
     [self.session stopRunning];
-    [self.previewLayer removeFromSuperlayer];
     
     NSLog(@"%@",metadataObjects);
     if (metadataObjects.count>0) {
         AVMetadataMachineReadableCodeObject* obj=metadataObjects[0];
         NSLog(@"%@",obj.stringValue);
-        if(true)
+        NSString* temp=obj.stringValue;
+        if([temp isEqual:@"1"])
         {
-            controllerSecondTabBar* Vc;
-            Vc = [self.storyboard instantiateViewControllerWithIdentifier:@"secondtabbar"];
-            [Vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-            [self presentViewController:Vc animated:YES completion:nil] ;
+            [[API sharedInstance] getResInfo:@"1"];
+        }
+        else
+        {
+            alert=[[UIAlertView alloc] initWithTitle:nil message:@"二维码错误，请重新扫描." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+            
         }
     }
+    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [alert dismissWithClickedButtonIndex:0 animated:YES];
+    [self.previewLayer removeFromSuperlayer];
+    [self readQrcode];
 }
-*/
+
+-(void)getResInfoSuccess
+{
+    controllerSecondTabBar* Vc;
+    Vc = [self.storyboard instantiateViewControllerWithIdentifier:@"secondtabbar"];
+    [Vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self presentViewController:Vc animated:YES completion:nil] ;
+
+}
 
 @end

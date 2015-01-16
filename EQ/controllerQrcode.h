@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "API.h"
 
-@interface controllerQrcode : UIViewController<AVCaptureMetadataOutputObjectsDelegate>
+@interface controllerQrcode : UIViewController<AVCaptureMetadataOutputObjectsDelegate,UIAlertViewDelegate,apiDelegate>
 @property(strong,nonatomic) AVCaptureSession *session;
 @property(strong,nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 @end

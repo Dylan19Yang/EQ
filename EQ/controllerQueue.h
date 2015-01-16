@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "API.h"
 
-@interface controllerQueue : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *testButton;
-- (IBAction)test:(id)sender;
+@interface controllerQueue : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableViewMain;
 
 @end

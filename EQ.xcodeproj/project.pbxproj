@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		0E06E16C1A67A2BB000B53A7 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06E16B1A67A2BB000B53A7 /* API.m */; };
 		0E06E16F1A67A737000B53A7 /* controllerQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06E16E1A67A737000B53A7 /* controllerQueue.m */; };
+		0E06E1731A682A95000B53A7 /* cellQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06E1711A682A95000B53A7 /* cellQueue.m */; };
+		0E06E1741A682A95000B53A7 /* cellQueue.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E06E1721A682A95000B53A7 /* cellQueue.xib */; };
+		0E06E17A1A683510000B53A7 /* controllerResDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06E1791A683510000B53A7 /* controllerResDetail.m */; };
+		0E06E17E1A683FFA000B53A7 /* CellMyQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06E17C1A683FFA000B53A7 /* CellMyQueue.m */; };
+		0E06E17F1A683FFA000B53A7 /* CellMyQueue.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E06E17D1A683FFA000B53A7 /* CellMyQueue.xib */; };
+		0E06E1821A68F48E000B53A7 /* controllerRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06E1811A68F48E000B53A7 /* controllerRegister.m */; };
+		0E06E1851A68FBD8000B53A7 /* controllerSelfInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06E1841A68FBD8000B53A7 /* controllerSelfInfo.m */; };
 		0ED980A11A5829FA00C826D8 /* controllerMainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED980A01A5829FA00C826D8 /* controllerMainTabBar.m */; };
 		0ED980A41A5985AE00C826D8 /* controllerSecondTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED980A31A5985AE00C826D8 /* controllerSecondTabBar.m */; };
 		0ED980A71A5991A700C826D8 /* controllerMallInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED980A61A5991A700C826D8 /* controllerMallInfo.m */; };
@@ -43,6 +50,18 @@
 		0E06E16B1A67A2BB000B53A7 /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		0E06E16D1A67A737000B53A7 /* controllerQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerQueue.h; sourceTree = "<group>"; };
 		0E06E16E1A67A737000B53A7 /* controllerQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = controllerQueue.m; sourceTree = "<group>"; };
+		0E06E1701A682A95000B53A7 /* cellQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cellQueue.h; sourceTree = "<group>"; };
+		0E06E1711A682A95000B53A7 /* cellQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cellQueue.m; sourceTree = "<group>"; };
+		0E06E1721A682A95000B53A7 /* cellQueue.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cellQueue.xib; sourceTree = "<group>"; };
+		0E06E1781A683510000B53A7 /* controllerResDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerResDetail.h; sourceTree = "<group>"; };
+		0E06E1791A683510000B53A7 /* controllerResDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = controllerResDetail.m; sourceTree = "<group>"; };
+		0E06E17B1A683FFA000B53A7 /* CellMyQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellMyQueue.h; sourceTree = "<group>"; };
+		0E06E17C1A683FFA000B53A7 /* CellMyQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellMyQueue.m; sourceTree = "<group>"; };
+		0E06E17D1A683FFA000B53A7 /* CellMyQueue.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellMyQueue.xib; sourceTree = "<group>"; };
+		0E06E1801A68F48E000B53A7 /* controllerRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerRegister.h; sourceTree = "<group>"; };
+		0E06E1811A68F48E000B53A7 /* controllerRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = controllerRegister.m; sourceTree = "<group>"; };
+		0E06E1831A68FBD8000B53A7 /* controllerSelfInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerSelfInfo.h; sourceTree = "<group>"; };
+		0E06E1841A68FBD8000B53A7 /* controllerSelfInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = controllerSelfInfo.m; sourceTree = "<group>"; };
 		0ED9809F1A5829FA00C826D8 /* controllerMainTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerMainTabBar.h; sourceTree = "<group>"; };
 		0ED980A01A5829FA00C826D8 /* controllerMainTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = controllerMainTabBar.m; sourceTree = "<group>"; };
 		0ED980A21A5985AE00C826D8 /* controllerSecondTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerSecondTabBar.h; sourceTree = "<group>"; };
@@ -129,6 +148,8 @@
 				0EE220DC1A51BF200087C477 /* CellLogin.xib */,
 				0EE220E81A5266B40087C477 /* controllerLogin.h */,
 				0EE220E91A5266B40087C477 /* controllerLogin.m */,
+				0E06E1801A68F48E000B53A7 /* controllerRegister.h */,
+				0E06E1811A68F48E000B53A7 /* controllerRegister.m */,
 				0EE220ED1A52DEA60087C477 /* controllerQrcode.h */,
 				0EE220EE1A52DEA60087C477 /* controllerQrcode.m */,
 				0ED9809F1A5829FA00C826D8 /* controllerMainTabBar.h */,
@@ -143,6 +164,16 @@
 				0E06E16B1A67A2BB000B53A7 /* API.m */,
 				0E06E16D1A67A737000B53A7 /* controllerQueue.h */,
 				0E06E16E1A67A737000B53A7 /* controllerQueue.m */,
+				0E06E1701A682A95000B53A7 /* cellQueue.h */,
+				0E06E1711A682A95000B53A7 /* cellQueue.m */,
+				0E06E1721A682A95000B53A7 /* cellQueue.xib */,
+				0E06E1781A683510000B53A7 /* controllerResDetail.h */,
+				0E06E1791A683510000B53A7 /* controllerResDetail.m */,
+				0E06E17B1A683FFA000B53A7 /* CellMyQueue.h */,
+				0E06E17C1A683FFA000B53A7 /* CellMyQueue.m */,
+				0E06E17D1A683FFA000B53A7 /* CellMyQueue.xib */,
+				0E06E1831A68FBD8000B53A7 /* controllerSelfInfo.h */,
+				0E06E1841A68FBD8000B53A7 /* controllerSelfInfo.m */,
 			);
 			path = EQ;
 			sourceTree = "<group>";
@@ -274,7 +305,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EE220BB1A5191270087C477 /* Main.storyboard in Resources */,
+				0E06E17F1A683FFA000B53A7 /* CellMyQueue.xib in Resources */,
 				0EE220C01A5191270087C477 /* LaunchScreen.xib in Resources */,
+				0E06E1741A682A95000B53A7 /* cellQueue.xib in Resources */,
 				0EE220BD1A5191270087C477 /* Images.xcassets in Resources */,
 				0EE220DE1A51BF200087C477 /* CellLogin.xib in Resources */,
 			);
@@ -330,11 +363,16 @@
 				0E06E16F1A67A737000B53A7 /* controllerQueue.m in Sources */,
 				0ED980AA1A5B65A600C826D8 /* controllerAllMallInfo.m in Sources */,
 				0ED980A41A5985AE00C826D8 /* controllerSecondTabBar.m in Sources */,
+				0E06E17E1A683FFA000B53A7 /* CellMyQueue.m in Sources */,
+				0E06E1731A682A95000B53A7 /* cellQueue.m in Sources */,
 				0ED980A11A5829FA00C826D8 /* controllerMainTabBar.m in Sources */,
 				0EE220B51A5191270087C477 /* AppDelegate.m in Sources */,
 				0E06E16C1A67A2BB000B53A7 /* API.m in Sources */,
+				0E06E1821A68F48E000B53A7 /* controllerRegister.m in Sources */,
+				0E06E1851A68FBD8000B53A7 /* controllerSelfInfo.m in Sources */,
 				0EE220B21A5191270087C477 /* main.m in Sources */,
 				0EE220DD1A51BF200087C477 /* CellLogin.m in Sources */,
+				0E06E17A1A683510000B53A7 /* controllerResDetail.m in Sources */,
 				0ED980A71A5991A700C826D8 /* controllerMallInfo.m in Sources */,
 				0EE220EA1A5266B40087C477 /* controllerLogin.m in Sources */,
 				0EE220EF1A52DEA60087C477 /* controllerQrcode.m in Sources */,
