@@ -26,6 +26,8 @@
 @property(strong,nonatomic) NSMutableArray *mallInfo;
 @property(strong,nonatomic) NSMutableDictionary *selfInfo;
 @property(strong,nonatomic) NSMutableDictionary *queueInfo;
+@property(strong,nonatomic) NSMutableArray *queueArray;
+@property(strong,nonatomic) NSMutableArray *nowQueueArray;
 @property(strong,nonatomic) NSString* IP;
 @property(nonatomic) BOOL isLogin;
 

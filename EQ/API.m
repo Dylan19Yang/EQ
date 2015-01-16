@@ -21,6 +21,8 @@ UIAlertView* publicAlert;
         _sharedInstance = [[API alloc] init];
         _sharedInstance.IP=@"172.13.0.50";
         _sharedInstance.isLogin=false;
+        _sharedInstance.queueArray=[[NSMutableArray alloc] init];
+        _sharedInstance.nowQueueArray=[[NSMutableArray alloc] init];
     }
     return _sharedInstance;
 }
@@ -150,7 +152,6 @@ UIAlertView* publicAlert;
         if ([sta isEqualToString:@"0"]) {
             publicAlert=[[UIAlertView alloc] initWithTitle:nil message:@"用户名已存在" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [publicAlert show];
-
         }
         else if([sta isEqualToString:@"1"])
         {
@@ -242,8 +243,9 @@ UIAlertView* publicAlert;
         NSData *resData = [[NSData alloc] initWithData:[requestTmp dataUsingEncoding:NSUTF8StringEncoding]];
         NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:resData options:NSJSONReadingMutableLeaves error:nil];
         self.queueInfo=[resultDic mutableCopy];
-        NSLog(@"%@",self.selfInfo);
-        NSString* sta=[self.selfInfo valueForKey:@"state"];
+        [self.queueArray addObject:self.queueInfo];
+        [self.nowQueueArray addObject:self.queueInfo];
+        NSString* sta=[self.queueInfo valueForKey:@"state"];
         if ([sta isEqualToString:@"1"]) {
             [self.delegate addQueueSuccess];
             
@@ -261,4 +263,50 @@ UIAlertView* publicAlert;
 
 }
 
+-(int)searchQueue:(NSString*)cusId :(NSString*)queueId
+{
+    NSString * URLtemp=[NSString stringWithFormat:@"http://%@:9993/ClientRequest/queueing_search.php?",self.IP];
+    URLtemp =[URLtemp stringByAppendingString:[NSString stringWithFormat:@"queueing_id=%@",queueId]];
+    URLtemp =[URLtemp stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: URLtemp]];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Success: %@", operation.responseString);
+        
+        [publicAlert dismissWithClickedButtonIndex:0 animated:YES];
+        
+        NSString *requestTmp = [NSString stringWithString:operation.responseString];
+        NSData *resData = [[NSData alloc] initWithData:[requestTmp dataUsingEncoding:NSUTF8StringEncoding]];
+        NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:resData options:NSJSONReadingMutableLeaves error:nil];
+        self.queueInfo=[resultDic mutableCopy];
+        NSInteger temp=0;
+        for(int i=0; i<self.nowQueueArray.count; i++)
+        {
+            NSMutableDictionary* arraytemp=[[NSMutableDictionary alloc] init];
+            arraytemp=self.nowQueueArray[i];
+            if ([arraytemp valueForKey:@"res_id"]==[self.queueInfo valueForKey:@"res_id"]) {
+                temp=i;
+            }
+        }
+        [self.nowQueueArray removeObjectAtIndex:temp];
+        [self.nowQueueArray insertObject:self.queueInfo atIndex:temp];
+        NSString* sta=[self.queueInfo valueForKey:@"state"];
+        if ([sta isEqualToString:@"1"]) {
+            [self.delegate addQueueSuccess];
+            
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure: %@", error);
+        
+    }];
+    
+    [operation start];
+    
+    return 0;
+    
+}
 @end

@@ -21,8 +21,10 @@
 }
 
 - (IBAction)queue:(id)sender {
+    [self.delegate addQueue:self.row];
 }
 
 - (IBAction)order:(id)sender {
+    [self.delegate addOrder:self.row];
 }
 @end

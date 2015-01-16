@@ -7,13 +7,14 @@
 //
 
 #import "controllerQueue.h"
-#import "cellQueue.h"
 #import "UIImageView+AFNetworking.h"
 
 
 @interface controllerQueue ()
 {
     NSMutableArray* mallInfo;
+    NSMutableArray* source;
+    NSInteger number;
 }
 
 @end
@@ -25,6 +26,26 @@
     // Do any additional setup after loading the view.
     mallInfo=[[NSMutableArray alloc] init];
     mallInfo=[API sharedInstance].mallInfo;
+    source=[[NSMutableArray alloc] init];
+    [source addObject:@"2人桌"];
+    [source addObject:@"4人桌"];
+    [source addObject:@"6人桌"];
+    [source addObject:@"8人桌"];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.imgBack.hidden=true;
+    self.viewBack.hidden=true;
+
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [API sharedInstance].delegate=self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,6 +75,7 @@
     [tableView registerNib:nib forCellReuseIdentifier:TableSampleIdentifier];
     cellQueue *cell = [tableView dequeueReusableCellWithIdentifier:
                           TableSampleIdentifier];
+    cell.delegate=self;
     if (cell == nil) {
         cell = [[cellQueue alloc]
                 initWithStyle:UITableViewCellStyleValue1
@@ -64,11 +86,73 @@
     cell.labelInfo.text=temp[5];
     NSString* tempURL=[NSString stringWithFormat:@"http://%@:9993/%@",[API sharedInstance].IP,temp[4]];
     [cell.picRes setImageWithURL:[NSURL URLWithString:tempURL]];
+    cell.row=indexPath.row;
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return [source count];
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [source objectAtIndex:row];
+}
+
+
+-(void)addQueue:(NSInteger)row
+{
+    self.imgBack.hidden=false;
+    self.viewBack.hidden=false;
+    number=row;
+}
+
+-(void)addOrder:(NSInteger)row
+{
+    
+}
+
+-(void)addQueueSuccess
+{
+    self.imgBack.hidden=true;
+    self.viewBack.hidden=true;
+    NSMutableDictionary* temp=([API sharedInstance].queueArray)[number];
+    NSMutableArray* temp2=mallInfo[number];
+    [temp setObject:temp2[3] forKey:@"name"];
+
+}
+
+- (IBAction)queueOk:(id)sender {
+    NSMutableArray* temp=mallInfo[number];
+    NSString* type;
+    if ([self.pickerTable selectedRowInComponent:0]==0) {
+        type=@"2";
+    }
+    else if ([self.pickerTable selectedRowInComponent:0]==1) {
+        type=@"4";
+    }
+    else if ([self.pickerTable selectedRowInComponent:0]==2) {
+        type=@"6";
+    }
+    else if ([self.pickerTable selectedRowInComponent:0]==3) {
+        type=@"8";
+    }
+    [[API sharedInstance] addQueue:[[API sharedInstance].selfInfo valueForKey:@"customer_id"] :temp[0] :type];
+}
+
+- (IBAction)queueCancel:(id)sender {
+    self.imgBack.hidden=true;
+    self.viewBack.hidden=true;
 }
 @end

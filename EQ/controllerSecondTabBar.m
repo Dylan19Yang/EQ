@@ -17,9 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[self.tabBar.items objectAtIndex:0] setImage:[UIImage imageNamed:@"mall_1"]];
+    [[self.tabBar.items objectAtIndex:0] setImage:[UIImage imageNamed:@"resta"]];
     UITabBarItem* temp0=[self.tabBar.items objectAtIndex:0];
-    temp0.selectedImage=[[UIImage imageNamed:@"mall_2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    temp0.selectedImage=[[UIImage imageNamed:@"resta"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [temp0 setImageInsets:UIEdgeInsetsMake(5, 0.0, -6, 0.0)];
     
     [[self.tabBar.items objectAtIndex:1] setImage:[UIImage imageNamed:@"pai"]];
@@ -27,12 +27,12 @@
     temp1.selectedImage=[[UIImage imageNamed:@"pai"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [temp1 setImageInsets:UIEdgeInsetsMake(5, 0.0, -6, 0.0)];
     
-    [[self.tabBar.items objectAtIndex:2] setImage:[UIImage imageNamed:@"profile_1"]];
+    [[self.tabBar.items objectAtIndex:2] setImage:[UIImage imageNamed:@"clock"]];
     UITabBarItem* temp2=[self.tabBar.items objectAtIndex:2];
-    temp2.selectedImage=[[UIImage imageNamed:@"profile_2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    temp2.selectedImage=[[UIImage imageNamed:@"clock"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [temp2 setImageInsets:UIEdgeInsetsMake(5, 0.0, -6, 0.0)];
     
-    self.tabBar.backgroundImage=[UIImage imageNamed:@"btmbar3"];
+    self.tabBar.backgroundImage=[UIImage imageNamed:@"btmbar"];
 }
 
 - (void)didReceiveMemoryWarning {

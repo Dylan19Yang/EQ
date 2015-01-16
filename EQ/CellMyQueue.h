@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface CellMyQueue : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *labelName;
+@property (weak, nonatomic) IBOutlet UILabel *labelNumber;
+@property (weak, nonatomic) IBOutlet UILabel *labelTime;
 
 @end
