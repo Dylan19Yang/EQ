@@ -8,6 +8,8 @@
 
 #import "controllerQueue.h"
 #import "UIImageView+AFNetworking.h"
+#import "controllerOrder.h"
+#import "controllerResDetail.h"
 
 
 @interface controllerQueue ()
@@ -92,7 +94,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [API sharedInstance].row=indexPath.row;
+    controllerResDetail* Vc;
+    Vc = [self.storyboard instantiateViewControllerWithIdentifier:@"resdetail"];
+    [Vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self presentViewController:Vc animated:YES completion:nil] ;
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
@@ -120,18 +126,29 @@
 
 -(void)addOrder:(NSInteger)row
 {
-    
+    NSString* resId=([API sharedInstance].mallInfo)[row][0];
+    [[API sharedInstance] getResMenu:resId];
+    [API sharedInstance].resId=resId;
 }
 
--(void)addQueueSuccess
-{
+-(void)addQueueSuccess:(NSInteger)row{
     self.imgBack.hidden=true;
     self.viewBack.hidden=true;
-    NSMutableDictionary* temp=([API sharedInstance].queueArray)[number];
+    NSMutableDictionary* temp=([API sharedInstance].queueArray)[row];
     NSMutableArray* temp2=mallInfo[number];
     [temp setObject:temp2[3] forKey:@"name"];
 
 }
+
+-(void)getMenuSuccess
+{
+    controllerOrder* Vc;
+    Vc = [self.storyboard instantiateViewControllerWithIdentifier:@"order"];
+    [Vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self presentViewController:Vc animated:YES completion:nil] ;
+
+}
+
 
 - (IBAction)queueOk:(id)sender {
     NSMutableArray* temp=mallInfo[number];
@@ -155,4 +172,6 @@
     self.imgBack.hidden=true;
     self.viewBack.hidden=true;
 }
+
+
 @end

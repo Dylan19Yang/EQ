@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "API.h"
 
-@interface controllerMyQueue : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface controllerMyQueue : UIViewController<UITableViewDataSource,UITableViewDelegate,apiDelegate>
 - (IBAction)buttonRefresh:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *table;
 
 @end

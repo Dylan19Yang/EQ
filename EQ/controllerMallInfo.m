@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.scrollViewInfo.contentSize=CGSizeMake(640, 300);
+    self.scrollViewInfo.contentSize=CGSizeMake(1280, 0);
     self.scrollViewInfo.delegate=self;
  }
 

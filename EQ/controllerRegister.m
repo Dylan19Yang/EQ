@@ -28,6 +28,7 @@
     [source addObject:@"先生"];
     [source addObject:@"女士"];
     [self.pickGender reloadAllComponents];
+    [self.textPwd  setSecureTextEntry:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated

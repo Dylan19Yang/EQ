@@ -26,6 +26,7 @@
     self.viewPhoneTrue.hidden=true;
     self.viewPwdTrue.hidden=true;
     self.buttonLoginTrue.hidden=true;
+    [self.textPwd  setSecureTextEntry:YES];
     self.buttonRegTrue.hidden=true;
     [self.textPhone setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [self.textPwd setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];

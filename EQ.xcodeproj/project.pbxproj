@@ -17,6 +17,9 @@
 		0E06E1821A68F48E000B53A7 /* controllerRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06E1811A68F48E000B53A7 /* controllerRegister.m */; };
 		0E06E1851A68FBD8000B53A7 /* controllerSelfInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06E1841A68FBD8000B53A7 /* controllerSelfInfo.m */; };
 		0E06E1881A694534000B53A7 /* controllerMyQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06E1871A694534000B53A7 /* controllerMyQueue.m */; };
+		0E06E1901A699781000B53A7 /* controllerOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06E18F1A699781000B53A7 /* controllerOrder.m */; };
+		0E06E1941A699B57000B53A7 /* CellOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06E1921A699B57000B53A7 /* CellOrder.m */; };
+		0E06E1951A699B57000B53A7 /* CellOrder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E06E1931A699B57000B53A7 /* CellOrder.xib */; };
 		0ED980A11A5829FA00C826D8 /* controllerMainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED980A01A5829FA00C826D8 /* controllerMainTabBar.m */; };
 		0ED980A41A5985AE00C826D8 /* controllerSecondTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED980A31A5985AE00C826D8 /* controllerSecondTabBar.m */; };
 		0ED980A71A5991A700C826D8 /* controllerMallInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED980A61A5991A700C826D8 /* controllerMallInfo.m */; };
@@ -65,6 +68,11 @@
 		0E06E1841A68FBD8000B53A7 /* controllerSelfInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = controllerSelfInfo.m; sourceTree = "<group>"; };
 		0E06E1861A694534000B53A7 /* controllerMyQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerMyQueue.h; sourceTree = "<group>"; };
 		0E06E1871A694534000B53A7 /* controllerMyQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = controllerMyQueue.m; sourceTree = "<group>"; };
+		0E06E18E1A699781000B53A7 /* controllerOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerOrder.h; sourceTree = "<group>"; };
+		0E06E18F1A699781000B53A7 /* controllerOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = controllerOrder.m; sourceTree = "<group>"; };
+		0E06E1911A699B57000B53A7 /* CellOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellOrder.h; sourceTree = "<group>"; };
+		0E06E1921A699B57000B53A7 /* CellOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellOrder.m; sourceTree = "<group>"; };
+		0E06E1931A699B57000B53A7 /* CellOrder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellOrder.xib; sourceTree = "<group>"; };
 		0ED9809F1A5829FA00C826D8 /* controllerMainTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerMainTabBar.h; sourceTree = "<group>"; };
 		0ED980A01A5829FA00C826D8 /* controllerMainTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = controllerMainTabBar.m; sourceTree = "<group>"; };
 		0ED980A21A5985AE00C826D8 /* controllerSecondTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllerSecondTabBar.h; sourceTree = "<group>"; };
@@ -179,6 +187,11 @@
 				0E06E1841A68FBD8000B53A7 /* controllerSelfInfo.m */,
 				0E06E1861A694534000B53A7 /* controllerMyQueue.h */,
 				0E06E1871A694534000B53A7 /* controllerMyQueue.m */,
+				0E06E18E1A699781000B53A7 /* controllerOrder.h */,
+				0E06E18F1A699781000B53A7 /* controllerOrder.m */,
+				0E06E1911A699B57000B53A7 /* CellOrder.h */,
+				0E06E1921A699B57000B53A7 /* CellOrder.m */,
+				0E06E1931A699B57000B53A7 /* CellOrder.xib */,
 			);
 			path = EQ;
 			sourceTree = "<group>";
@@ -313,6 +326,7 @@
 				0E06E17F1A683FFA000B53A7 /* CellMyQueue.xib in Resources */,
 				0EE220C01A5191270087C477 /* LaunchScreen.xib in Resources */,
 				0E06E1741A682A95000B53A7 /* cellQueue.xib in Resources */,
+				0E06E1951A699B57000B53A7 /* CellOrder.xib in Resources */,
 				0EE220BD1A5191270087C477 /* Images.xcassets in Resources */,
 				0EE220DE1A51BF200087C477 /* CellLogin.xib in Resources */,
 			);
@@ -365,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E06E1901A699781000B53A7 /* controllerOrder.m in Sources */,
 				0E06E1881A694534000B53A7 /* controllerMyQueue.m in Sources */,
 				0E06E16F1A67A737000B53A7 /* controllerQueue.m in Sources */,
 				0ED980AA1A5B65A600C826D8 /* controllerAllMallInfo.m in Sources */,
@@ -380,6 +395,7 @@
 				0EE220DD1A51BF200087C477 /* CellLogin.m in Sources */,
 				0E06E17A1A683510000B53A7 /* controllerResDetail.m in Sources */,
 				0ED980A71A5991A700C826D8 /* controllerMallInfo.m in Sources */,
+				0E06E1941A699B57000B53A7 /* CellOrder.m in Sources */,
 				0EE220EA1A5266B40087C477 /* controllerLogin.m in Sources */,
 				0EE220EF1A52DEA60087C477 /* controllerQrcode.m in Sources */,
 			);
